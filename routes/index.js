@@ -22,7 +22,7 @@ router.get('/Krosh', function(req, res, next) {
 
 
 /* Страница Пина*/
-router.get('/pin', function(req, res, next) {
+router.get('/Pin', function(req, res, next) {
   res.render('smeshariki', {
       title: "Пин",
       picture: "images/pin.jpg",
