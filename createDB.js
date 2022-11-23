@@ -6,12 +6,13 @@ const client = new MongoClient(uri)
 async function run() {
     try {
         await client.connect();
-        var database = client.db("smeshariki");
-        database.dropDatabase()
-        database = client.db("smeshariki");
-        const Smeshariki= database.collection("fauna");
-        const result = await Smeshariki.insertOne({ name: "Нюша" });
-        console.log(`${result} documents were inserted`);
+var database = client.db("smeshariki");
+database.dropDatabase()
+database = client.db("smeshariki");
+const cats = database.collection("fauna");
+const result = await cats.insertMany(data);
+console.log(`${result.insertedCount} documents were inserted`);
+
     } finally {
         await client.close();
     }
