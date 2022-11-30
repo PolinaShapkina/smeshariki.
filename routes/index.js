@@ -1,7 +1,8 @@
+
 var express = require('express');
 var router = express.Router();
-
-/* Страница Нюши */
+/*
+страница нюши
 router.get('/Nusha', function(req, res, next) {
   res.render('smeshariki', {
       title: "Нюша",
@@ -11,7 +12,7 @@ router.get('/Nusha', function(req, res, next) {
 });
 
 
-/* Страница Кроша*/
+страница кроша
 router.get('/Krosh', function(req, res, next) {
   res.render('smeshariki', {
       title: "Крош",
@@ -21,7 +22,7 @@ router.get('/Krosh', function(req, res, next) {
   });
 
 
-/* Страница Пина*/
+страница пина
 router.get('/Pin', function(req, res, next) {
   res.render('smeshariki', {
       title: "Пин",
@@ -29,6 +30,6 @@ router.get('/Pin', function(req, res, next) {
       desc: "Пин — изобретатель-самоучка, гениальнейший пингвин всех времён. Виртуоз в своих железных изобретениях."
   });
 });
-
+*/
 
 module.exports = router;
