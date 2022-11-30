@@ -9,8 +9,7 @@ mongoose.connect('mongodb://127.0.0.1/smeshariki')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var fauna = require("./routes/smeshariki");
-const { smeshariki } = require('./models/fauna');
+var smeshariki = require("./routes/smeshariki");
 
 var app = express();
 
