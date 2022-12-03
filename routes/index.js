@@ -11,7 +11,8 @@ router.get('/', function(req, res, next) {
       res.cookie('greeting', 'Hi!!!')
       res.render('index',{
                                 title: 'Express',
-                                menu: menu
+                                menu: menu,
+                                counter:req.session.counter 
                             });
     })
 

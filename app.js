@@ -34,6 +34,10 @@ app.use(session({
   store: MongoStore.create({mongoUrl: 'mongodb://127.0.0.1/smeshariki'})
 }))
 
+app.use(function(req,res,next){
+  req.session.counter = req.session.counter +1 || 1
+  next()
+})
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
