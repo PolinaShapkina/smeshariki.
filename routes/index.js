@@ -7,7 +7,9 @@ var smeshariki = require("../models/Smeshariki").smeshariki
 /* GET home page. */
 router.get('/', function(req, res, next) {
     smeshariki.find({},{_id:0,title:1,nick:1},function(err,menu){
-      res.cookie('greeting', 'Hi!!!').render('index',{
+      req.session.greeting = 'Hi!!!'
+      res.cookie('greeting', 'Hi!!!')
+      res.render('index',{
                                 title: 'Express',
                                 menu: menu
                             });
