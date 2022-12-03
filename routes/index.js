@@ -1,7 +1,7 @@
 
 var express = require('express')
 var router = express.Router()
-var smeshariki = require("../models/fauna").smeshariki
+var smeshariki = require("../models/Smeshariki").smeshariki
 
 
 /* GET home page. */

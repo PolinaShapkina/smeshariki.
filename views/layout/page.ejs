@@ -18,12 +18,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/">Главная</a>
                         </li>
-                        <% menu.forEach(function(fauna){ %>
+                        <% menu.forEach(function(smeshariki){ %>
                             <li class="nav-item">
-                                <a class="nav-link" href="/faunas/<%=fauna.nick%>"><%=fauna.title%>
-                                </a>
+                                <a class="nav-link" href="/smeshariki/<%=smeshariki.nick%>"><%=smeshariki.title%></a>
                             </li>
-                            <% }) %>
+                        <% }) %>
                     </ul>
                     <ul ckass="navbar-nav navbar-right">
                         <li>

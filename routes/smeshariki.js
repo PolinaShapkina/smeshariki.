@@ -1,6 +1,6 @@
 var express = require ('express');
 var router = express.Router();
-var smeshariki = require ("../models/fauna").smeshariki;
+var smeshariki = require ("../models/Smeshariki").smeshariki;
 var async = require ("async");
 
 /* GET users listing. */
@@ -20,14 +20,15 @@ router.get('/:nick', function(req, res, next) {
         ],
         function(err,result){
             if(err) return next(err)
-            var fauna = result[0]
-            var faunas = result[1] || []
-            if(!fauna) return next(new Error("Нет такого героя в мультике "))
-            res.render('fauna', {
-                title: fauna.title,
-                picture: fauna.avatar,
-                desc: fauna.desc,
-                menu: faunas
+            var Smeshariki = result[0]
+            var smesharikis= result[1] || []
+            console.log(smesharikis)
+            if(!Smeshariki) return next(new Error("Нет такого героя в мультике "))
+            res.render('Smeshariki', {
+                title: Smeshariki.title,
+                picture: Smeshariki.avatar,
+                desc: Smeshariki.desc,
+                menu: smesharikis
             });
         })
 })
