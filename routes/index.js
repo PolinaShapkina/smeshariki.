@@ -17,6 +17,12 @@ router.get('/', function(req, res, next) {
 
 });
 
+/* GET login/registration page. */
+router.get('/logreg', function (req, res, next) {
+  res.render('logreg', { title: 'Вход' });
+});
+
+
 /*
 страница нюши
 router.get('/Nusha', function(req, res, next) {
