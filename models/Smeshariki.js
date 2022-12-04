@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 
-var SmesharikiSchema = new Schema({
+var smesharikiSchema = new Schema({
     title: String,
     nick: {
         type: String,
@@ -16,4 +16,4 @@ var SmesharikiSchema = new Schema({
         default:Date.now
     }
 })
-module.exports.smeshariki = mongoose.model("smeshariki", SmesharikiSchema)
+module.exports.smeshariki = mongoose.model("smeshariki", smesharikiSchema)

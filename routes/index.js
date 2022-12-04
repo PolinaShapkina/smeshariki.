@@ -1,17 +1,16 @@
 
 var express = require('express')
 var router = express.Router()
-var smeshariki = require("../models/Smeshariki").smeshariki
+var Smeshariki = require("../models/Smeshariki").smeshariki
 
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    smeshariki.find({},{_id:0,title:1,nick:1},function(err,menu){
+    Smeshariki.find({},{_id:0,title:1,nick:1},function(err,menu){
       req.session.greeting = 'Hi!!!'
       res.cookie('greeting', 'Hi!!!')
       res.render('index',{
                                 title: 'Express',
-                                menu: menu,
                                 counter:req.session.counter 
                             });
     })

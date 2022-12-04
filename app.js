@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mongoose = require('mongoose')
 mongoose.connect('mongodb://127.0.0.1/smeshariki')
 var session = require("express-session")
+var Smeshariki = require("./models/Smeshariki").smeshariki
 
 
 var indexRouter = require('./routes/index');
@@ -39,6 +40,17 @@ app.use(function(req,res,next){
   next()
 })
 
+app.use(function (req, res, next) {
+  res.locals.nav = []
+  Smeshariki.find (null, { _id: 0, title: 1, nick: 1 }, function (err, result) {
+    if (err) throw err
+    res.locals.nav = result
+    next()
+  })
+})
+
+app.use(require("./middleware/createMenu.js"))
+
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/smeshariki', smeshariki);
@@ -56,8 +68,7 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error', {
-    title: "Упс",
-    menu: []
+    title: "Упс"
   });
 });
 
