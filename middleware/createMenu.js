@@ -8,5 +8,5 @@ module.exports = function(req,res,next){
         if(err) throw err
         res.locals.nav = result
         next()
-    })
-}
+        })
+        }
